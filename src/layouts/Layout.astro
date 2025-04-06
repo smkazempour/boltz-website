@@ -4,6 +4,16 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Helper function to join base URL and path, handling potential double slashes
+const resolveUrl = (path: string) => {
+  if (path === '/') return baseUrl; // Base URL handles root correctly
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${cleanBase}/${cleanPath}`;
+};
 ---
 
 <!doctype html>
@@ -25,13 +35,13 @@ const { title } = Astro.props;
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex">
-            <a href="/" class="flex items-center text-xl font-semibold">Seyed Mohammad Kazempour</a>
+            <a href={resolveUrl('/')} class="flex items-center text-xl font-semibold">Seyed Mohammad Kazempour</a>
           </div>
           <div class="hidden md:flex md:space-x-8">
-            <a href="/" class="inline-flex items-center px-1 pt-1 text-gray-900">Home</a>
-            <a href="/research" class="inline-flex items-center px-1 pt-1 text-gray-900">Research</a>
-            <a href="/cv" class="inline-flex items-center px-1 pt-1 text-gray-900">CV</a>
-            <a href="/conferences" class="inline-flex items-center px-1 pt-1 text-gray-900">Conferences</a>
+            <a href={resolveUrl('/')} class="inline-flex items-center px-1 pt-1 text-gray-900">Home</a>
+            <a href={resolveUrl('/research')} class="inline-flex items-center px-1 pt-1 text-gray-900">Research</a>
+            <a href={resolveUrl('/cv')} class="inline-flex items-center px-1 pt-1 text-gray-900">CV</a>
+            <a href={resolveUrl('/conferences')} class="inline-flex items-center px-1 pt-1 text-gray-900">Conferences</a>
           </div>
           <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
             <span class="sr-only">Open main menu</span>
@@ -42,10 +52,10 @@ const { title } = Astro.props;
       <!-- Mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Home</a>
-          <a href="/research" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Research</a>
-          <a href="/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">CV</a>
-          <a href="/conferences" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Conferences</a>
+          <a href={resolveUrl('/')} class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Home</a>
+          <a href={resolveUrl('/research')} class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Research</a>
+          <a href={resolveUrl('/cv')} class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">CV</a>
+          <a href={resolveUrl('/conferences')} class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Conferences</a>
         </div>
       </div>
     </nav>
