@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import conferencesData from '../../public/conference_list.csv?raw';
+
+interface ConferenceRow {
+  [key: string]: string; // Allows indexing by header string
+}
+
+// Helper to parse CSV data safely
+function parseCSV(csvString: string): { headers: string[]; rows: ConferenceRow[] } {
+  const lines = csvString.trim().split(/\r\n|\n/);
+  if (lines.length < 2) return { headers: [], rows: [] }; // Need header + at least one data row
+
+  // Simple CSV parsing (assumes no commas within quoted fields for simplicity)
+  const headers = lines[0].split(',').map((h: string) => h.trim());
+  const rows: ConferenceRow[] = lines.slice(1).map((line: string) => {
+    const values = line.split(','); // Simple split, might break with commas in fields
+    let rowData: ConferenceRow = {};
+    headers.forEach((header: string, index: number) => {
+      rowData[header] = values[index] ? values[index].trim() : '';
+    });
+    return rowData;
+  });
+
+  return { headers, rows };
+}
+
+const { headers, rows } = parseCSV(conferencesData);
+const headersToDisplay = headers.filter((h: string) => h !== 'Topics of interest');
+const rowsToDisplay = rows.slice(0, 20); // Get first 20 rows
+---
+
+<Layout title="Conferences - Seyed Mohammad Kazempour">
+  <div class="space-y-6">
+    <h1 class="text-3xl font-bold">A List of Finance Conferences</h1>
+    
+    <p class="text-gray-700 leading-relaxed">
+      If you wish to have a list of all conferences with information about their areas of focus, dates, submission deadlines, etc., 
+      then you will find this page useful. I scrape 
+      <a href="https://www.ssrn.com/index.cfm/en/janda/professional-announcements/?annsNet=203#AnnType_2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SSRN's list of finance conferences</a> 
+      every once in a while and use AI to extract useful information from the announcements. Others, including 
+      <a href="https://afajof.org/conference-calendar/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">the AFA</a>, 
+      also hold similar lists. My list is automatically generated and might include errors. 
+      Please double-check with the announcements if the details are important to you.
+      The table below shows the first 20 conferences from the list.
+    </p>
+
+    <p class="text-gray-700 leading-relaxed">
+      <em class="block mb-2">
+        <a href="/conference_list.xlsx" 
+           class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i class="fas fa-file-excel mr-2"></i>
+          Download the Excel file here.
+        </a>
+      </em>
+      <em>Last update: November 1, 2024</em>
+    </p>
+
+    <!-- Conference Table -->
+    <div class="mt-8 overflow-x-auto shadow rounded-lg">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            {headersToDisplay.map((header: string) => (
+              <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          {rowsToDisplay.map((row: ConferenceRow) => (
+            <tr>
+              {headersToDisplay.map((header: string) => (
+                <td class="px-4 py-3 whitespace-normal text-sm text-gray-700">
+                  {row[header]}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <!-- End Conference Table -->
+
+    <div class="mt-8 p-4 bg-yellow-100 border border-yellow-300 text-yellow-800 rounded">
+      <p><strong>Note:</strong> Please use the Excel download link for the complete list.</p>
+    </div>
+
+  </div>
+</Layout> 

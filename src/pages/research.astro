@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Research - Seyed Mohammad Kazempour">
+  <div class="space-y-12">
+    <h1 class="text-3xl font-bold">Research</h1>
+
+    <section class="space-y-2">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Working Papers</h2>
+      <div class="space-y-6">
+        
+        <article class="py-2">
+          <p class="text-gray-800 leading-relaxed">
+            <strong class="font-semibold"> Disseminating Information on Twitter: Evidence from Investment Advisers</strong>.
+            (2023, September).
+            <em class="text-gray-600"> Working Paper</em>.
+            <span class="ml-2">
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4574229" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">[SSRN]</a>
+              <button data-target="abstract-wp-1" class="abstract-toggle text-blue-600 hover:underline ml-2 focus:outline-none">[Abstract]</button>
+            </span>
+          </p>
+          <div id="abstract-wp-1" class="text-gray-700 mt-2 text-sm hidden bg-gray-50 p-3 rounded border border-gray-200">
+            I show that investment advisers disseminate valuable stock information on their Twitter accounts. A one standard deviation increase in the sentiment of their tweets predicts a 12 bps increase in abnormal returns over the next week. This informativeness is not a result of pump-and-dump strategies or ex-post window-dressing. Advisers' tweets disseminate and interpret public news, especially analyst revisions and earnings announcements. Furthermore, they identify which recent trends in stock prices are fundamentally justified. Advisers offering financial planning services post more informative tweets. My results highlight the value of Twitter for connecting advisers and investors.
+          </div>
+        </article>
+
+        <article class="py-2">
+          <p class="text-gray-800 leading-relaxed">
+            <strong class="font-semibold"> Finfluencers</strong>, with Ali Kakhbod, Dmitry Livdan, and Norman Schürhoff.
+            (2023, April).
+            <em class="text-gray-600"> Working Paper</em>.
+            <span class="ml-2">
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4428232" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">[SSRN]</a>
+              <button data-target="abstract-wp-2" class="abstract-toggle text-blue-600 hover:underline ml-2 focus:outline-none">[Abstract]</button>
+            </span>
+          </p>
+          <div id="abstract-wp-2" class="text-gray-700 mt-2 text-sm hidden bg-gray-50 p-3 rounded border border-gray-200">
+            Tweet-level data from a social media platform reveals low average accuracy and high dispersion in the quality of advice by financial influencers, or "finfluencers": 28% of finfluencers are skilled generating 2.6% monthly abnormal returns, 16% are unskilled, and 56% have negative skill ("antiskill") generating -2.3% monthly abnormal returns. Consistent with homophily shaping finfluencers' social networks, antiskilled have more followers and more influence on retail trading than skilled finfluencers. The advice by antiskilled finfluencers creates overly optimistic beliefs most times and persistent swings in followers' belief bias. Consequently, finfluencers cause excessive trading and inefficient prices such that a contrarian strategy yields 1.2% monthly out-of-sample performance.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="space-y-2 mt-8">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Publications</h2>
+      <div class="space-y-6">
+        
+        <article class="py-2">
+          <p class="text-gray-800 leading-relaxed">
+            <strong class="font-semibold"> Discretionary Announcement Timing and Stock Returns</strong>, with Kerry Back, Bruce Carlin, and Chloe Xie.
+            (Forthcoming).
+            <em class="text-gray-600"> Journal of Finance</em>.
+            <span class="ml-2">
+               <!-- Add link if available -->
+              <button data-target="abstract-pub-1" class="abstract-toggle text-blue-600 hover:underline ml-2 focus:outline-none">[Abstract]</button>
+            </span>
+          </p>
+          <div id="abstract-pub-1" class="text-gray-700 mt-2 text-sm hidden bg-gray-50 p-3 rounded border border-gray-200">
+            Discretionary announcement timing generates high conditional risk premia of stock returns and a characteristic pattern of negative drifts followed by positive jumps. Average announcement returns are much larger than unconditional risk premia. Empirical use of the CAPM will likely result in downward biased risk premium estimates. The effects are magnified when multiple firms exercise discretion over the timing of correlated announcements. We present evidence that firms time earnings announcements in a manner consistent with our model.
+          </div>
+        </article>
+
+        <article class="py-2">
+          <p class="text-gray-800 leading-relaxed">
+            <strong class="font-semibold"> Validity, tightness, and forecasting power of risk premium bounds</strong>, with Kerry Back and Kevin Crotty.
+            (2022).
+            <em class="text-gray-600"> Journal of Financial Economics, 144</em>(3), 732–760.
+            <span class="ml-2">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0304405X22000551?casa_token=DcxU949hTewAAAAA:RYbWnoPrV_mr0knc8QlgcrS8TVkk2JCgV2ygKbW9Xhha5B97szBrkUycT0ukBBJDJh3jE9MsWq4" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">[Article]</a>
+              <button data-target="abstract-pub-2" class="abstract-toggle text-blue-600 hover:underline ml-2 focus:outline-none">[Abstract]</button>
+            </span>
+          </p>
+          <div id="abstract-pub-2" class="text-gray-700 mt-2 text-sm hidden bg-gray-50 p-3 rounded border border-gray-200">
+            Recent work uses option prices to derive lower bounds for the risk premia of the market portfolio and individual stocks. We test the bounds conditionally. We cannot reject that they are valid, but we do reject that they are tight. Using the market bounds as forecasts appears unreasonable in many cases due to their high slackness. Adding past mean slackness is a potential improvement but is hampered by the brevity of the available data series. The correlation of the stock bounds with subsequent returns stems primarily from the time series rather than the cross section.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<script>
+  function setupAbstractToggles() {
+    const abstractToggles = document.querySelectorAll('button.abstract-toggle');
+    
+    abstractToggles.forEach(button => {
+      if (button instanceof HTMLElement) {
+        // Check if a listener is already attached to avoid duplicates
+        if (button.dataset.listenerAttached === 'true') return; 
+
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-target');
+          if (targetId) {
+            const abstractDiv = document.getElementById(targetId);
+            if (abstractDiv) {
+              abstractDiv.classList.toggle('hidden');
+            }
+          }
+        });
+        // Mark as attached
+        button.dataset.listenerAttached = 'true'; 
+      }
+    });
+  }
+
+  // Run on initial load
+  if (document.readyState === 'loading') { // Loading hasn't finished yet
+    document.addEventListener('DOMContentLoaded', setupAbstractToggles);
+  } else {  // `DOMContentLoaded` has already fired
+    setupAbstractToggles();
+  }
+  
+  // Run after Astro navigations
+  document.addEventListener('astro:page-load', setupAbstractToggles);
+</script>

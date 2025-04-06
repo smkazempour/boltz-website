@@ -26,33 +26,40 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="w-full bg-white bg-opacity-80 backdrop-blur-sm rounded-lg p-6 border border-transparent shadow-sm">
       <h2 class="text-2xl font-semibold mb-4 text-gray-900">News</h2>
-      <ul class="space-y-2">
+      <ul class="space-y-3">
         <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-            <span class="text-gray-600 whitespace-nowrap">01/15/2024</span>
+          <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+            <span class="text-gray-600 whitespace-nowrap font-medium">Mar 17, 2025</span>
             <span class="hidden sm:inline text-gray-400">|</span>
-            <span class="font-semibold">New paper accepted at the Journal of Finance</span>
+            <span set:html={'<strong>Discretionary Announcement Timing and Stock Prices</strong>, which I coauthored with Kerry Back, Bruce Carlin, and Chloe Xie, is now forthcoming in the <em>Journal of Finance</em>.'} />
+          </div>
+        </li>
+         <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+            <span class="text-gray-600 whitespace-nowrap font-medium">Oct 30, 2024</span>
+            <span class="hidden sm:inline text-gray-400">|</span>
+            <span set:html={'I had a fun and insightful conversation with Dave Mabe and Michael Nauss of the <a href="https://www.lineyourownpockets.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Line Your Own Pockets Podcast</a> about "Finfluencers". <a href="https://www.lineyourownpockets.com/episodes/sayed-interivew" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Check it out here</a>.'} />
+          </div>
+        </li>
+         <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+            <span class="text-gray-600 whitespace-nowrap font-medium">Jul 14, 2024</span>
+            <span class="hidden sm:inline text-gray-400">|</span>
+            <span set:html={'I presented <strong>Finfluencers</strong> at the NBER Summer Institute on Big Data and High-Performance Computing for Financial Economics. You can check out the video <a href="https://www.youtube.com/live/IpvnMeIAH7Y?si=-7tPcUtI1hfzPgjw&amp;t=10271" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">here</a>.'} />
+          </div>
+        </li>
+         <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+            <span class="text-gray-600 whitespace-nowrap font-medium">Sep 20, 2023</span>
+            <span class="hidden sm:inline text-gray-400">|</span>
+            <span set:html={'My colleague Norman Schürhoff has discussed our paper with the German channel NDR. You can check it out <a href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.ardmediathek.de%2Fvideo%2Fmarkt%2Fmarkt-die-ganze-sendung-oder-18-09-2023%2Fndr%2FY3JpZDovL25kci5kZS9wcm9wbGFuXzE5NjMzOTg1OV9nYW56ZVNlbmR1bmc&amp;data=05%7C01%7Cskazempour%40lsu.edu%7C838f51b50c74490de43408dbba26fdd8%7C2d4dad3f50ae47d983a09ae2b1f466f8%7C0%7C0%7C638308448847198555%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=cPAQxMAOuWoAskEBMwy4tXtN%2FxIX23RIotXkxl1fbB0%3D&amp;reserved=0" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">here (from 13:35)</a>.'} />
           </div>
         </li>
         <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-            <span class="text-gray-600 whitespace-nowrap">12/20/2023</span>
+          <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+            <span class="text-gray-600 whitespace-nowrap font-medium">Apr 25, 2023</span>
             <span class="hidden sm:inline text-gray-400">|</span>
-            <span class="font-semibold">Presenting at the AFA 2024 Annual Meeting</span>
-          </div>
-        </li>
-        <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-            <span class="text-gray-600 whitespace-nowrap">11/30/2023</span>
-            <span class="hidden sm:inline text-gray-400">|</span>
-            <span class="font-semibold">Awarded research grant from LSU</span>
-          </div>
-        </li>
-        <li class="transition-colors duration-200 hover:bg-gray-50 p-2 rounded">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-            <span class="text-gray-600 whitespace-nowrap">09/01/2023</span>
-            <span class="hidden sm:inline text-gray-400">|</span>
-            <span class="font-semibold">Joined Louisiana State University as Assistant Professor</span>
+            <span set:html={'My Paper titled <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4428232" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"><strong>"Finfluencers"</strong></a> with Dmitry Livdan, Norman Schürhoff, and Ali Kakhbod was accepted for the 50th meeting of the European Finance Association.'} />
           </div>
         </li>
       </ul>
@@ -82,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fas fa-graduation-cap text-2xl"></i>
+        <i class="ai ai-google-scholar text-2xl"></i> 
       </a>
     </div>
   </div>

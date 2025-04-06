@@ -16,6 +16,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
   </head>
   <body class="bg-white">
     <nav class="border-b border-gray-200">
@@ -26,9 +27,9 @@ const { title } = Astro.props;
           </div>
           <div class="hidden md:flex md:space-x-8">
             <a href="/" class="inline-flex items-center px-1 pt-1 text-gray-900">Home</a>
-            <a href="/articles" class="inline-flex items-center px-1 pt-1 text-gray-900">Articles</a>
+            <a href="/research" class="inline-flex items-center px-1 pt-1 text-gray-900">Research</a>
             <a href="/cv" class="inline-flex items-center px-1 pt-1 text-gray-900">CV</a>
-            <a href="/blog" class="inline-flex items-center px-1 pt-1 text-gray-900">Blog</a>
+            <a href="/conferences" class="inline-flex items-center px-1 pt-1 text-gray-900">Conferences</a>
           </div>
           <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
             <span class="sr-only">Open main menu</span>
@@ -40,9 +41,9 @@ const { title } = Astro.props;
       <div id="mobile-menu" class="hidden md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
           <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Home</a>
-          <a href="/articles" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Articles</a>
+          <a href="/research" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Research</a>
           <a href="/cv" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">CV</a>
-          <a href="/blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Blog</a>
+          <a href="/conferences" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-600 hover:bg-gray-100">Conferences</a>
         </div>
       </div>
     </nav>

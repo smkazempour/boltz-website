@@ -4,60 +4,127 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="CV - Seyed Mohammad Kazempour">
   <div class="space-y-8">
+    <div class="flex justify-end">
+      <a 
+        href="/CV.pdf" 
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fas fa-file-pdf mr-2"></i>
+        Download PDF Version
+      </a>
+    </div>
+
     <h1 class="text-3xl font-bold">Curriculum Vitae</h1>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Education</h2>
-      <div class="border-l-2 border-gray-200 pl-4 space-y-4">
-        <div>
-          <h3 class="font-semibold">Ph.D. in Finance</h3>
-          <p class="text-gray-600">Rice University, 2020-2023</p>
+      <h2 class="text-2xl font-semibold">Academic History</h2>
+      <div class="pl-4 space-y-4">
+        <div class="flex justify-between">
+          <span class="font-semibold">Assistant Professor of Finance, E. J. Ourso College of Business</span>
+          <span class="text-gray-600">Since 2023</span>
         </div>
-        <div>
-          <h3 class="font-semibold">M.Sc. in Electrical Engineering</h3>
-          <p class="text-gray-600">Rice University, 2014-2017</p>
+        <div class="flex justify-between">
+          <span class="font-semibold">Ph.D. in Finance, Rice University</span>
+          <span class="text-gray-600">2017-2023</span>
         </div>
-        <div>
-          <h3 class="font-semibold">B.Sc. in Electrical Engineering</h3>
-          <p class="text-gray-600">Sharif University of Technology, 2010-2014</p>
+        <div class="flex justify-between">
+          <span class="font-semibold">M.Sc. in Electrical Engineering, Rice University</span>
+          <span class="text-gray-600">2014-2017</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-semibold">B.Sc. in Electrical Engineering, Sharif University of Technology</span>
+          <span class="text-gray-600">2010-2014</span>
         </div>
       </div>
     </section>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Research Experience</h2>
-      <div class="border-l-2 border-gray-200 pl-4 space-y-4">
+      <h2 class="text-2xl font-semibold">Research Interests</h2>
+      <div class="pl-4">
+        <p class="text-gray-700">Information Economics, Asset Pricing, Textual Analysis.</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">Working Papers</h2>
+      <div class="pl-4 space-y-4">
         <div>
-          <h3 class="font-semibold">Assistant Professor of Finance</h3>
-          <p class="text-gray-600">Louisiana State University's E. J. Ourso College of Business, 2023-Present</p>
-          <p class="text-gray-700">Research focus on information economics and how agents communicate in financial markets.</p>
+          <p class="font-semibold">Disseminating Information on Twitter: Evidence from Investment Advisers</p>
+          <p class="text-gray-700">Available on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4574229" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">SSRN</a>.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Finfluencers</p>
+          <p class="text-gray-700">with Ali Kakhbod, Dmitry Livdan, and Norman Schürhoff</p>
+          <p class="text-gray-700">Available on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4428232" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">SSRN</a>.</p>
         </div>
       </div>
     </section>
 
     <section class="space-y-4">
       <h2 class="text-2xl font-semibold">Publications</h2>
-      <div class="border-l-2 border-gray-200 pl-4 space-y-4">
-        <ul class="list-disc list-inside text-gray-700">
-          <li>Information Transmission in Financial Markets, Journal of Finance, 2024</li>
-          <li>Communication and Market Dynamics, Review of Financial Studies, 2023</li>
-          <li>Information Asymmetry in Financial Markets, Journal of Financial Economics, 2022</li>
-        </ul>
+      <div class="pl-4 space-y-4">
+        <div>
+          <p class="font-semibold">Discretionary Announcement Timing and Stock Returns</p>
+          <p class="text-gray-700">with Kerry Back, Bruce Carlin, and Chloe Xie</p>
+          <p class="text-gray-700">Forthcoming in the <em>Journal of Finance</em></p>
+          <p class="text-gray-700">Available on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4933885" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">SSRN</a>.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Validity, Tightness, and Forecasting Power of Risk Premium Bounds</p>
+          <p class="text-gray-700">with Kerry Back and Kevin Crotty</p>
+          <p class="text-gray-700"><em>Journal of Financial Economics</em> 144 (3), 2022, pp. 732–760.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">Other Publications</h2>
+      <div class="pl-4 space-y-4">
+        <div>
+          <p class="font-semibold">Micrometer-Sized Sensors with Free-Space Optical Energy Harvesting in CMOS</p>
+          <p class="text-gray-700">with Mahdi Forghani and Aydin Babakhani</p>
+          <p class="text-gray-700">Published in <em>2020 Topical Meeting on Silicon Monolithic Integrated Circuits in RF Systems</em>.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Methods and Systems Related to Remote Measuring and Sensing</p>
+          <p class="text-gray-700">with Aydin Babakhani, Mahdi Forghani, Yuxiang Sun, and Yaswanth Kumar Cherivirala.</p>
+          <p class="text-gray-700"><em>U.S. Patent 11048893</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">Presentations</h2>
+      <div class="pl-4 space-y-2">
+         <p class="text-gray-700">AFA 2025<sup class="text-xs">*</sup>, NBER Summer Institute on Big Data and High-Performance Computing for Financial Economics 2024, 2024 Jackson Hole Finance Conference<sup class="text-xs">*</sup>, Claremont Graduate University 2023, EuFA 2023<sup class="text-xs">*</sup>, NFA 2021</p>
+         <p class="text-sm text-gray-600"><sup class="text-xs">*</sup>: presented by a coauthor</p> 
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">Professional Services</h2>
+      <div class="pl-4 space-y-2">
+        <p class="text-gray-700"><span class="font-semibold">Journal Reviews:</span> European Financial Management, Journal of Banking and Finance, Management Science.</p>
+        <p class="text-gray-700"><span class="font-semibold">Program Committee:</span> MFA (2025, 2023), EFA 2023</p>
+        <p class="text-gray-700"><span class="font-semibold">Discussions:</span> FMA (2023, 2020)</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">Media Appearances</h2>
+      <div class="pl-4">
+        <p class="text-gray-700"><a href="https://lineyourownpockets.com/episodes/sayed-interivew" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Line Your Own Pockets Podcast</a>: Episode 11 - October 11, 2024</p>
       </div>
     </section>
 
     <section class="space-y-4">
       <h2 class="text-2xl font-semibold">Teaching</h2>
-      <div class="border-l-2 border-gray-200 pl-4 space-y-4">
-        <div>
-          <h3 class="font-semibold">Financial Markets and Institutions</h3>
-          <p class="text-gray-600">Louisiana State University, Spring 2024</p>
-        </div>
-        <div>
-          <h3 class="font-semibold">Corporate Finance</h3>
-          <p class="text-gray-600">Louisiana State University, Fall 2023</p>
-        </div>
+      <div class="pl-4">
+        <p class="text-gray-700">Financial Management (UG), Financial Modeling and Analytics (UG, MS)</p>
       </div>
     </section>
+    
   </div>
 </Layout>

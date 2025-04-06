@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Public files to ignore
+public/Conferences.html
+public/homepage.html
+public/Research.html
+public/Research.mhtml
+public/resume.tex
