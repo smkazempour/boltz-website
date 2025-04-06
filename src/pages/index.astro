@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const baseUrl = import.meta.env.BASE_URL;
+// Ensure base URL ends with a slash for correct concatenation
+const baseWithSlash = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
 <Layout title="Seyed Mohammad Kazempour - Personal Website">
@@ -7,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="flex flex-col md:flex-row md:gap-12 items-start">
       <div class="w-full max-w-[256px] flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
         <img
-          src={import.meta.env.BASE_URL + 'profile.jpg'}
+          src={baseWithSlash + 'profile.jpg'}
           alt="Seyed Mohammad Kazempour"
           class="w-full rounded-lg shadow-md"
           width="256"
