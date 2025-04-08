@@ -14,16 +14,38 @@ function parseCSV(csvString: string): { headers: string[]; rows: ConferenceRow[]
   const lines = csvString.trim().split(/\r\n|\n/);
   if (lines.length < 2) return { headers: [], rows: [] }; // Need header + at least one data row
 
-  // Simple CSV parsing (assumes no commas within quoted fields for simplicity)
   const headers = lines[0].split(',').map((h: string) => h.trim());
-  const rows: ConferenceRow[] = lines.slice(1).map((line: string) => {
-    const values = line.split(','); // Simple split, might break with commas in fields
+  const rows: ConferenceRow[] = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i];
+    const values = [];
+    let value = '';
+    let inQuotes = false;
+
+    for (let j = 0; j < line.length; j++) {
+      const char = line[j];
+
+      if (char === '"' && (j === 0 || line[j - 1] !== '\\')) {
+        inQuotes = !inQuotes;
+        continue;
+      }
+
+      if (char === ',' && !inQuotes) {
+        values.push(value.trim());
+        value = '';
+      } else {
+        value += char;
+      }
+    }
+    values.push(value.trim());
+
     let rowData: ConferenceRow = {};
     headers.forEach((header: string, index: number) => {
       rowData[header] = values[index] ? values[index].trim() : '';
     });
-    return rowData;
-  });
+    rows.push(rowData);
+  }
 
   return { headers, rows };
 }
