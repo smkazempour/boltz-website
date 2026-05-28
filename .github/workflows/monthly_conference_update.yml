@@ -1,0 +1,59 @@
+name: Monthly Conference List Update
+
+on:
+  schedule:
+    # Runs on the 1st of every month at 06:00 UTC
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub Actions UI
+
+permissions:
+  contents: write  # Needed to commit and push output files
+
+jobs:
+  update-conference-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Firefox and geckodriver
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y firefox-esr
+
+          # Install latest geckodriver
+          GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest \
+            | grep '"tag_name"' | sed 's/.*"v\([^"]*\)".*/\1/')
+          wget -q "https://github.com/mozilla/geckodriver/releases/download/v${GECKO_VERSION}/geckodriver-v${GECKO_VERSION}-linux64.tar.gz"
+          tar -xzf "geckodriver-v${GECKO_VERSION}-linux64.tar.gz"
+          sudo mv geckodriver /usr/local/bin/
+          geckodriver --version
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run conference scraper
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OUTPUT_DIR: ./Public
+        run: |
+          mkdir -p ./Public
+          python run_conference_scraper.py
+
+      - name: Commit and push updated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Public/conference_list.html Public/conference_list.xlsx Public/conference_list.csv
+          git diff --staged --quiet && echo "No changes to commit." || \
+            git commit -m "chore: update conference list $(date +'%Y-%m-%d')"
+          git push
