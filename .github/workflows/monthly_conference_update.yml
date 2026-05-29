@@ -25,18 +25,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Firefox and geckodriver
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y firefox-esr
+      - name: Install Firefox
+        uses: browser-actions/setup-firefox@latest
 
-          # Install latest geckodriver
-          GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest \
-            | grep '"tag_name"' | sed 's/.*"v\([^"]*\)".*/\1/')
-          wget -q "https://github.com/mozilla/geckodriver/releases/download/v${GECKO_VERSION}/geckodriver-v${GECKO_VERSION}-linux64.tar.gz"
-          tar -xzf "geckodriver-v${GECKO_VERSION}-linux64.tar.gz"
-          sudo mv geckodriver /usr/local/bin/
-          geckodriver --version
+      - name: Install geckodriver
+        uses: browser-actions/setup-geckodriver@latest
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
